@@ -105,7 +105,7 @@ public class HiddenPassword {
 
     // This doesn't work like it should. It won't check if a password char comes between two expected chars
     // For example, with the password ABAC and the message AABAC, this algorithm will not recognize that the second A should not appear
-    // O(P * 2 + M)
+    // O(P + M)
     private static class PasswordMessagePairValidatorWithMap implements PasswordMessagePairValidator {
         public boolean validate(PasswordMessagePair pair) {
             Map<Character, LinkedList<Integer>> characterIndexMap = new HashMap<>();
